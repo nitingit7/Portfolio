@@ -298,6 +298,13 @@
             display: block;
         }
 
+        .icon-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain; /* keeps aspect ratio */
+        }
+
+
         .link-card h3 {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
@@ -366,218 +373,8 @@
             }
         }
 
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 20px rgba(99, 102, 241, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
-            }
-        }
-
-        @keyframes typewriter {
-            from {
-                width: 0;
-            }
-            to {
-                width: 100%;
-            }
-        }
-
-        @keyframes blink {
-            50% {
-                border-color: transparent;
-            }
-        }
-
         .fade-in {
             animation: fadeInUp 0.8s ease-out;
-        }
-
-        .fade-in-left {
-            animation: fadeInLeft 1s ease-out;
-        }
-
-        .fade-in-right {
-            animation: fadeInRight 1s ease-out;
-        }
-
-        .bounce-animation {
-            animation: bounce 2s infinite;
-        }
-
-        .pulse-animation {
-            animation: pulse 2s infinite;
-        }
-
-        /* Enhanced hero animations */
-        .hero h1 {
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-
-        .hero p:nth-of-type(1) {
-            animation: fadeInUp 1s ease-out 0.4s both;
-        }
-
-        .hero p:nth-of-type(2) {
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-
-        .hero p:nth-of-type(3) {
-            animation: fadeInUp 1s ease-out 0.8s both;
-        }
-
-        .cta-button {
-            animation: fadeInUp 1s ease-out 1s both, pulse 2s infinite 2s;
-        }
-
-        /* Floating elements */
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        /* Glowing text effect */
-        .glow-text {
-            text-shadow: 0 0 10px rgba(99, 102, 241, 0.5),
-                         0 0 20px rgba(99, 102, 241, 0.3),
-                         0 0 30px rgba(99, 102, 241, 0.2);
-        }
-
-        /* Card hover animations */
-        .link-card {
-            transform: translateY(0);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .link-card:hover {
-            transform: translateY(-15px) scale(1.05);
-            box-shadow: 0 25px 50px rgba(99, 102, 241, 0.3);
-        }
-
-        .about-card {
-            transform: translateY(0);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .about-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
-        }
-
-        /* Icon animations */
-        .link-card .icon {
-            transition: all 0.3s ease;
-        }
-
-        .link-card:hover .icon {
-            transform: scale(1.2) rotate(5deg);
-            filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.5));
-        }
-
-        /* Navbar animation */
-        .nav-links a {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nav-links a::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: -100%;
-            width: 100%;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: all 0.3s ease;
-        }
-
-        .nav-links a:hover::before {
-            left: 0;
-        }
-
-        /* Section title animations */
-        .section-title {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            width: 60px;
-            height: 3px;
-            background: var(--gradient-primary);
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-
-        /* Enhanced email button */
-        .email-link {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .email-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: all 0.6s ease;
-        }
-
-        .email-link:hover::before {
-            left: 100%;
         }
 
         /* Mobile Menu */
@@ -698,17 +495,14 @@
     <nav id="navbar">
         <div class="container">
             <div class="nav-container">
-                <div class="logo">NK</div>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#links">Links</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div style="display: flex; align-items: center; gap: 1rem;">
-                    <button class="theme-toggle" id="themeToggle">🌙</button>
-                    <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
-                </div>
+                <button class="theme-toggle" id="themeToggle">🌙</button>
+                <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
             </div>
         </div>
     </nav>
@@ -718,9 +512,8 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Nitin Kumar</h1>
-                <p>Hello! I'm Nitin Kumar 👋</p>
-                <p>I've completed my B.Sc. (Hons) in Physics from Shivaji College under Delhi University. I'm deeply captivated by the worlds of game development, coding, and programming, and I'm the type of person to embrace learning with a 'why not' attitude. I'd say the things that really get me going are new exciting challenges and opportunities that enable me to pick new skills and, really, create, collaborate, and grow.</p>
-                <p>The portfolio is like an insight into what I've done, the projects I set out to build, the skills I strived to acquire, and the ideas I hold. Feel free to take a look, and you'll notice all the awesome things I'm involved in! 🚀</p>
+                <p>Physics Graduate | Developer | Creative Thinker</p>
+                <p>BSc(H) Physics from Shivaji College, Delhi University</p>
                 <a href="#about" class="cta-button">Explore My Work</a>
             </div>
         </div>
@@ -746,8 +539,8 @@
                         <p>Delhi University</p>
                     </div>
                     <div class="education-info">
-                        <h3>Interests & Skills</h3>
-                        <p>Python • Office 365 • C++ • C# • HTML • CSS • Unity Engine • Machine Learning</p>
+                        <h3>Interests</h3>
+                        <p>Physics • Technology • Development • Creative Projects</p>
                     </div>
                 </div>
             </div>
@@ -760,22 +553,30 @@
             <h2 class="section-title">Connect & Explore</h2>
             <div class="links-grid">
                 <a href="https://github.com/nitingit7" class="link-card" data-link="github" target="_blank">
-                    <span class="icon">💻</span>
+                    <span class="icon">
+                        <img class="icon-img" src="Images/github.png" alt="GitHub">
+                    </span>
                     <h3>GitHub</h3>
                     <p>Explore my code repositories and development projects</p>
                 </a>
-                <a href="https://nitingit7.itch.io/royal-runner" class="link-card floating" data-link="itch" target="_blank">
-                    <span class="icon">🎮</span>
+                <a href="https://nitingit7.itch.io/royal-runner" class="link-card" data-link="itch" target="_blank">
+                    <span class="icon">
+                        <img class="icon-img" src="Images/Itch.png" alt="itch.io">
+                    </span>
                     <h3>Itch.io</h3>
                     <p>Check out my creative games and interactive experiences</p>
                 </a>
                 <a href="https://geniusphere.netlify.app/" class="link-card" data-link="webpage" target="_blank">
-                    <span class="icon">🌐</span>
+                    <span class="icon">
+                        <img class="icon-img" src="Images/Website.png" alt="Website">
+                    </span>
                     <h3>My Webpage</h3>
                     <p>Visit my personal website for more content</p>
                 </a>
-                <a href="#" class="link-card" data-link="resume">
-                    <span class="icon">📄</span>
+                <a href="https://drive.google.com/file/d/1THtW3MOTbO-l9PWKc1OEGnLHbA7dZzFa/view?usp=sharing" class="link-card" data-link="resume" target="_blank">
+                    <span class="icon">
+                        <img class="icon-img" src="Images/cv.png" alt="CV">
+                    </span>
                     <h3>Resume</h3>
                     <p>Download my detailed resume and professional background</p>
                 </a>
